@@ -28,5 +28,9 @@ public class BookService {
     public void addBook(Book book){
         bookRepository.save(book);
     }
+    public void deleteBook(int i){
+        bookRepository.delete(i);
+    }
+
 
 }

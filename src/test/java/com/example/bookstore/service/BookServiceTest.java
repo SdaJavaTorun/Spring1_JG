@@ -29,8 +29,8 @@ public class BookServiceTest {
     public void getListeningData() throws Exception {
         //given  ?(w przypadku gdy findAll da poniższy rezultat
         when(bookRepository.findAll()).thenReturn(Lists.newArrayList(
-                new Book("title1", "autor1"),
-                new Book("title2", "autor2")
+                new Book("1","title1", "autor1"),
+                new Book("2","title2", "autor2")
                 )
         );
         //when  (po czym odpalimy poniższą metodę
@@ -39,8 +39,8 @@ public class BookServiceTest {
         //then  (to wyniki będzie następujący)
         assertEquals(
                 new BookListing(
-                        Lists.newArrayList(new Book("title1", "autor1"),
-                                new Book("title2", "autor2")
+                        Lists.newArrayList(new Book("1","title1", "autor1"),
+                                new Book("2","title2", "autor2")
                         ), 2
                 ),
                 bookListing);

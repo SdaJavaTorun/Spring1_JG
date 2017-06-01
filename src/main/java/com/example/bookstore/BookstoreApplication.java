@@ -15,8 +15,6 @@ public class BookstoreApplication implements CommandLineRunner {
 
 	private final BookService bookService;
 
-	@Value("${mymessage}")
-	private String message;
 
 	@Autowired
 	public BookstoreApplication(BookService bookService){
@@ -31,9 +29,9 @@ public class BookstoreApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... strings) throws Exception {
-		System.out.println(message);
-		//bookService.addBook(new Book("Spring", "Autor1"));
-		//bookService.addBook(new Book("Mongo", "Autor2"));
+		/// System.out.println(message);
+		bookService.addBook(new Book("1", "Spring", "Autor1"));
+		bookService.addBook(new Book("2", "Mongo", "Autor2"));
 
 		//System.out.println(bookService.getListeningData());
 	}

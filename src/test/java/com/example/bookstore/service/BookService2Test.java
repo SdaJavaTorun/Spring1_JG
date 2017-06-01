@@ -27,8 +27,8 @@ public class BookService2Test {
     @Before
     public void setUp(){
         // bookReposirtory.delateAll();  // powinnismy wyzerowac instancje przed kazdym testem
-        bookRepository.save(new Book("ksiazka 1", "autor 1"));
-        bookRepository.save(new Book("ksiazka 2", "autor 2"));
+        bookRepository.save(new Book("1","ksiazka 1", "autor 1"));
+        bookRepository.save(new Book("2","ksiazka 2", "autor 2"));
     }
 
     @Test
@@ -42,8 +42,8 @@ public class BookService2Test {
         //then  (to wyniki będzie następujący)
         assertEquals(
                 new BookListing(
-                        Lists.newArrayList(new Book("ksiazka 1", "autor 1"),
-                                new Book("ksiazka 2", "autor 2")
+                        Lists.newArrayList(new Book("1","ksiazka 1", "autor 1"),
+                                new Book("2","ksiazka 2", "autor 2")
                         ), 2
                 ),
                 bookListing);
